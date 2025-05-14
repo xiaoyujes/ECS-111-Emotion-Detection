@@ -1,0 +1,8 @@
+# Ignore data folders
+data/
+
+# Python
+_pychache_/
+*.py[cod]
+.python-versions
+.ipynb_checkpoints

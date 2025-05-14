@@ -11,11 +11,11 @@ Dataset:
 Task Plan: 
 - Week 7:
   - resizing + normalizing (sadia)
-  - conversion of file types to 1 type + division of testing and training data (jes),
-  - data encoding for the emotions + figure out algorithm to use (research & share with group on findings/algorithms to go for) (chuck),
+  - conversion of file types to 1 type + division of testing and training data (jes)
+  - data encoding for the emotions + figure out algorithm to use (research & share with group on findings/algorithms to go for) (chuck)
   - extra:
-  - technically everyone can do research on the algorithm :)),
-  - if tasks are done early and we have an algorithm in mind, we can start building our algorithm!,
+    - technically everyone can do research on the algorithm :))
+    - if tasks are done early and we have an algorithm in mind, we can start building our algorithm!
 
 - Week 8 + Onwards:
   - building algorithm and testing (hopefully have complete by end of the week),

@@ -2,16 +2,23 @@
 
 This repository will contain all the code that is used for the project, from smaller tasks such as normalization, resizing, etc. to the final algorithm that is built for emotion detection. The main goal of this project is to properly and accurately identify the emotion present in children's drawings.
 
+Project Description: 
+[pdf](https://cdn-uploads.piazza.com/paste/m6slvq75i3k31k/d7030087025aca9f8d670bf7c3dc3e23df4e923c1545abb7a956953004bd352e/ECS111_SQ_2025_-_project.pdf)
+
 Project Proposal: 
 [Proposal](https://docs.google.com/document/d/1mfopRWyw--y7h06VD_z1D53k16H_82CRohDGWVvjiAk/edit?usp=sharing)
 
 Dataset: 
 [Kaggle](https://www.kaggle.com/datasets/vishmiperera/children-drawings?select=data)
 
+Converted Data: 
+[Google Drive](https://drive.google.com/drive/folders/1xkOsVxCkwTQJi3ruOoOHVbvzSn8kqRCS?q=sharedwith:public%20parent:1xkOsVxCkwTQJi3ruOoOHVbvzSn8kqRCS)
+Note: Feel free to use the images here for any task and modify it for the algorithm too.
+
 Task Plan: 
 - Week 7:
   - resizing + normalizing (sadia)
-  - conversion of file types to 1 type + division of testing and training data (jes)
+  - ~~conversion of file types to 1 type + division of testing and training data (jes)~~
   - data encoding for the emotions + figure out algorithm to use (research & share with group on findings/algorithms to go for) (chuck)
   - extra:
     - technically everyone can do research on the algorithm :))
@@ -25,26 +32,28 @@ Task Plan:
 ## File and Directory Structure
 ```
 README.md
+code/
 data/
-├───code
-├───data
-│   ├───Angry
-│   ├───Fear
-│   ├───Happy
-│   └───Sad
-├───data_converted
-│   ├───Angry
-│   ├───Fear
-│   ├───Happy
-│   └───Sad
-├───NewArts2
-│   ├───Angry
-│   ├───Fear
-│   ├───Happy
-│   └───Sad
-└───NewArts2_converted
-    ├───Angry
-    ├───Fear
-    ├───Happy
-    └───Sad
+├───converted
+│   ├───data_converted
+│   │   ├───Angry
+│   │   ├───Fear
+│   │   ├───Happy
+│   │   └───Sad
+│   └───NewArts2_converted
+│       ├───Angry
+│       ├───Fear
+│       ├───Happy
+│       └───Sad
+└───not_converted
+    ├───data
+    │   ├───Angry
+    │   ├───Fear
+    │   ├───Happy
+    │   └───Sad
+    └───NewArts2
+        ├───Angry
+        ├───Fear
+        ├───Happy
+        └───Sad
 ```

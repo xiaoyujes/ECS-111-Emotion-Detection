@@ -30,7 +30,7 @@ train_data.to_csv(train_encoded_csv, index=False)
 test_data.to_csv(test_encoded_csv, index=False)
 
 # Initialize OneHotEncoder
-onehot_encoder = OneHotEncoder(sparse=False)
+onehot_encoder = OneHotEncoder(sparse_output=False)
 
 # One-hot encoding
 train_onehot = onehot_encoder.fit_transform(train_data[['label_encoded']])

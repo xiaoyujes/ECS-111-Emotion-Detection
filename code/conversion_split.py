@@ -5,7 +5,6 @@ could be empty.
 
 Use the Google Drive not_converted folder to run this code if you want to do the conversion yourself.
 '''
-
 from PIL import Image
 import os
 import random

@@ -1,6 +1,6 @@
 # ECS 111 Emotion Detection in Children's Drawings Project
 
-This repository will contain all the code that is used for the project, from smaller tasks such as normalization, resizing, etc. to the final algorithm that is built for emotion detection. The main goal of this project is to properly and accurately identify the emotion present in children's drawings.
+This repository will contain all the code that is used for the ECS 111 Emotion Detection in Children's Drawings project, from smaller tasks such as normalization, resizing, etc. to the final algorithm that is built for emotion detection. The main goal of this project is to properly and accurately identify the emotion present in children's drawings.
 
 Project Description: 
 [pdf](https://cdn-uploads.piazza.com/paste/m6slvq75i3k31k/d7030087025aca9f8d670bf7c3dc3e23df4e923c1545abb7a956953004bd352e/ECS111_SQ_2025_-_project.pdf)
@@ -17,17 +17,28 @@ Note: Feel free to use the images here for any task and modify it for the algori
 
 Task Plan: 
 - Week 7:
-  - resizing + normalizing (sadia)
+  - ~~resizing + normalizing (sadia)~~
   - ~~conversion of file types to 1 type + division of testing and training data (jes)~~
-  - data encoding for the emotions + figure out algorithm to use (research & share with group on findings/algorithms to go for) (chuck)
+  - ~~data encoding for the emotions + figure out algorithm to use (research & share with group on findings/algorithms to go for) (chuck)~~
   - extra:
     - technically everyone can do research on the algorithm :))
     - if tasks are done early and we have an algorithm in mind, we can start building our algorithm!
 
-- Week 8 + Onwards:
-  - building algorithm and testing (hopefully have complete by end of the week),
-  - extra:
-    - start working on presentation + final paper
+Week 8 Meeting Notes: 
+- Algorithm: ResNet50
+- Encoding: one-hot
+
+- Week 8:
+  - OVERALL GOAL: finish up algorithm by end of the week/before next meeting
+  - Build & fine-tuning ResNet50, compile model, add dropout if needed, train with callbacks (jes)
+  - Create data augmentation pipeline, evaluate model, visualize predictions (chuck)
+  - Research inference logic, run prediction script on test data, summarize model performance + charts if necessary (sadia) 
+
+- Interim Checkup: 5/24/25 --> 6/7pm
+- Finished Algorithm Checkin: 5/28/25 --> 5pm
+
+- Week 9: 
+  - Work on presentation + paper
 
 ## File and Directory Structure
 ```

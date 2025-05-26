@@ -25,17 +25,26 @@ Task Plan:
     - if tasks are done early and we have an algorithm in mind, we can start building our algorithm!
 
 Week 8 Meeting Notes: 
-- Algorithm: ResNet50
+- Algorithm: ~~ResNet50~~ Modified to use MobileNetV2 as it is better for small data sets such as ours with 1.1K images only
 - Encoding: one-hot
 
 - Week 8:
   - OVERALL GOAL: finish up algorithm by end of the week/before next meeting
-  - Build & fine-tuning ResNet50, compile model, add dropout if needed, train with callbacks (jes)
+  - ~~Build & fine-tuning ResNet50, compile model, add dropout if needed, train with callbacks (jes)~~
   - Create data augmentation pipeline, evaluate model, visualize predictions (chuck)
   - Research inference logic, run prediction script on test data, summarize model performance + charts if necessary (sadia) 
 
-- Interim Checkup: 5/24/25 --> 6/7pm
-- Finished Algorithm Checkin: 5/28/25 --> 5pm
+Additional Notes (5/25):
+- Need to add more elements for expanding the project scope
+  - Option 1: Prediction for what the Emotion of the next week might be 
+    - Might use: Linear Regression
+    - This option is just a thought can be modified to fit TA's comment 
+  - Option 2: Simulation of student groups to predict which students are at risk
+    - Might use: Simple RNN classifier
+    - This option is also just a thought so feel free to modify
+
+- Interim Checkup: 5/~~24~~27/25 --> 6/7pm?
+- Finished Algorithm Checkin: 5/~~28~~30/25 --> 5pm?
 
 - Week 9: 
   - Work on presentation + paper
@@ -68,3 +77,4 @@ data/
         ├───Happy
         └───Sad
 ```
+

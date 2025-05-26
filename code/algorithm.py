@@ -17,7 +17,7 @@ import os
 import seaborn as sns
 
 ####Hyperparameters###
-learningrate = 0.00001
+learningrate = 0.00001 
 batchsize = 32
 epochs = 100
 dropoutrate = 0.35

@@ -12,7 +12,7 @@ Dataset:
 [Kaggle](https://www.kaggle.com/datasets/vishmiperera/children-drawings?select=data)
 
 Converted Data: 
-[Google Drive](https://drive.google.com/drive/folders/1xkOsVxCkwTQJi3ruOoOHVbvzSn8kqRCS?q=sharedwith:public%20parent:1xkOsVxCkwTQJi3ruOoOHVbvzSn8kqRCS)
+[Google Drive](https://drive.google.com/drive/folders/1xkOsVxCkwTQJi3ruOoOHVbvzSn8kqRCS?q=sharedwith:public%20parent:1xkOsVxCkwTQJi3ruOoOHVbvzSn8kqRCS) \
 Note: Feel free to use the images here for any task and modify it for the algorithm too.
 
 Task Plan: 
@@ -43,10 +43,10 @@ Additional Notes (5/25):
     - Might use: Simple RNN classifier
     - This option is also just a thought so feel free to modify
 
-- Interim Checkup: 5/~~24~~27/25 --> 6/7pm?
-- Finished Algorithm Checkin: 5/~~28~~30/25 --> 5pm?
+- ~~Interim Checkup: 5/28/25 --> 6/7pm?~~
+- Finished Algorithm Checkin: 5/31/25 --> 2pm
 
-- Week 9: 
+- Week 9 + 10: 
   - Work on presentation + paper
 
 ## File and Directory Structure
@@ -77,4 +77,5 @@ data/
         ├───Happy
         └───Sad
 ```
+
 

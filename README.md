@@ -8,6 +8,9 @@ Project Description:
 Project Proposal: 
 [Proposal](https://docs.google.com/document/d/1mfopRWyw--y7h06VD_z1D53k16H_82CRohDGWVvjiAk/edit?usp=sharing)
 
+Project Presentation: 
+[Presentation](https://docs.google.com/presentation/d/1iKzccb15EB8VY1FnFnWSoCPZVB1LiDXuvovfqDzCQkk/edit?usp=sharing)
+
 Dataset: 
 [Kaggle](https://www.kaggle.com/datasets/vishmiperera/children-drawings?select=data)
 
@@ -43,8 +46,8 @@ Additional Notes (5/25):
     - Might use: Simple RNN classifier
     - This option is also just a thought so feel free to modify
 
-- ~~Interim Checkup: 5/28/25 --> 6/7pm?~~
-- Finished Algorithm Checkin: 5/31/25 --> 7pm
+- ~~Interim Checkup: 5/28/25 --> 6/7pm~~
+- Finished Algorithm Checkin: 6/1/25 --> 7pm
 
 - Week 9 + 10: 
   - Work on presentation + paper

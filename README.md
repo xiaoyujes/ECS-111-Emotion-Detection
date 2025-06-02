@@ -47,7 +47,7 @@ Additional Notes (5/25):
     - This option is also just a thought so feel free to modify
 
 - ~~Interim Checkup: 5/28/25 --> 6/7pm~~
-- Finished Algorithm Checkin: 6/1/25 --> 7pm
+- ~~Finished Algorithm Checkin: 6/1/25 --> 7pm~~
 
 - Week 9 + 10: 
   - Work on presentation + paper

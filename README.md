@@ -1,6 +1,6 @@
 # ECS 111 Emotion Detection in Children's Drawings Final Project
 
-This repository will contains all the code that was used for the ECS 111 Emotion Detection in Children's Drawings project, from smaller tasks such as normalization, resizing, etc. to the final algorithm that is built for emotion detection, and the risk detection tasks. The main goal of this project is to build an algorithm that is capable of identifying the emotions present in a child's drawing, divided into four classes, anger, fear, happy, and sad, along with performing a risk detection analysis.
+This repository contains all the code that was used for the ECS 111 Emotion Detection in Children's Drawings project, from smaller tasks such as normalization, resizing, etc. to the final algorithm that is built for emotion detection, and the risk detection tasks. The main goal of this project is to build an algorithm that is capable of identifying the emotions present in a child's drawing, divided into four classes, anger, fear, happy, and sad, along with performing a risk detection analysis.
 
 Project Description: 
 [pdf](https://cdn-uploads.piazza.com/paste/m6slvq75i3k31k/d7030087025aca9f8d670bf7c3dc3e23df4e923c1545abb7a956953004bd352e/ECS111_SQ_2025_-_project.pdf)
@@ -34,14 +34,11 @@ Final Report:
 <<<<<<< HEAD
 ### Algorithm:
 algorithm.py: Contains the MobileNetV2 code along with the training algorithm on the training set.
-analysis_pipeline.py: 'please add in description here!'
-=======
-- ~~Interim Checkup: 5/28/25 --> 6/7pm~~
-- ~~Finished Algorithm Checkin: 6/1/25 --> 7pm~~
->>>>>>> 321a60f7148d6515c10e2f7f3c90aecc0e955b54
+analysis_pipeline.py: 
+/'please add in description here!'
 
 ### Risk Detection: 
-'please add code used here!'
+/'please add code used here!'
 
 ## File and Directory Structure
 ```

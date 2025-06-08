@@ -1,6 +1,6 @@
-# ECS 111 Emotion Detection in Children's Drawings Project
+# ECS 111 Emotion Detection in Children's Drawings Final Project
 
-This repository will contain all the code that is used for the ECS 111 Emotion Detection in Children's Drawings project, from smaller tasks such as normalization, resizing, etc. to the final algorithm that is built for emotion detection. The main goal of this project is to properly and accurately identify the emotion present in children's drawings.
+This repository will contains all the code that was used for the ECS 111 Emotion Detection in Children's Drawings project, from smaller tasks such as normalization, resizing, etc. to the final algorithm that is built for emotion detection, and the risk detection tasks. The main goal of this project is to build an algorithm that is capable of identifying the emotions present in a child's drawing, divided into four classes, anger, fear, happy, and sad, along with performing a risk detection analysis.
 
 Project Description: 
 [pdf](https://cdn-uploads.piazza.com/paste/m6slvq75i3k31k/d7030087025aca9f8d670bf7c3dc3e23df4e923c1545abb7a956953004bd352e/ECS111_SQ_2025_-_project.pdf)
@@ -13,41 +13,27 @@ Dataset:
 
 Converted Data: 
 [Google Drive](https://drive.google.com/drive/folders/1xkOsVxCkwTQJi3ruOoOHVbvzSn8kqRCS?q=sharedwith:public%20parent:1xkOsVxCkwTQJi3ruOoOHVbvzSn8kqRCS) \
-Note: Feel free to use the images here for any task and modify it for the algorithm too.
+Note: This Google Drive contains the converted images (preprocessed) along with the unconverted images and other files that were used throughout the duration of the project.
 
-Task Plan: 
-- Week 7:
-  - ~~resizing + normalizing (sadia)~~
-  - ~~conversion of file types to 1 type + division of testing and training data (jes)~~
-  - ~~data encoding for the emotions + figure out algorithm to use (research & share with group on findings/algorithms to go for) (chuck)~~
-  - extra:
-    - technically everyone can do research on the algorithm :))
-    - if tasks are done early and we have an algorithm in mind, we can start building our algorithm!
+Presentation: 
+[Google Slides](https://docs.google.com/presentation/d/1iKzccb15EB8VY1FnFnWSoCPZVB1LiDXuvovfqDzCQkk/edit?usp=sharing)
 
-Week 8 Meeting Notes: 
-- Algorithm: ~~ResNet50~~ Modified to use MobileNetV2 as it is better for small data sets such as ours with 1.1K images only
-- Encoding: one-hot
+Final Report: 
+[Report](https://docs.google.com/document/d/1W-_J3VC6vMQZH5OmvAEEN8us_nsKwGjT3-p0BsSWbKo/edit?usp=sharing)
 
-- Week 8:
-  - OVERALL GOAL: finish up algorithm by end of the week/before next meeting
-  - ~~Build & fine-tuning ResNet50, compile model, add dropout if needed, train with callbacks (jes)~~
-  - Create data augmentation pipeline, evaluate model, visualize predictions (chuck)
-  - Research inference logic, run prediction script on test data, summarize model performance + charts if necessary (sadia) 
 
-Additional Notes (5/25):
-- Need to add more elements for expanding the project scope
-  - Option 1: Prediction for what the Emotion of the next week might be 
-    - Might use: Linear Regression
-    - This option is just a thought can be modified to fit TA's comment 
-  - Option 2: Simulation of student groups to predict which students are at risk
-    - Might use: Simple RNN classifier
-    - This option is also just a thought so feel free to modify
+## Code Files Description
+### Preprocessing: 
+1. conversion_split.py: Converted all images to file type .jpg along with splits the dataset into training and testing sets. Creates csv files containing the relative paths to all images in the dataset along with the class they belong into defined by the name of the directory that the image belongs in.
+2. normalization.py: Normalized pixel values via images/255 along with standardizing the images to be 224 x 224.
+3. data encoding for emotions.py: Takes in the csv files created for the training and testing set and encodes the labels using both label encoding and one-hot emcoding methods./
 
-- ~~Interim Checkup: 5/28/25 --> 6/7pm?~~
-- Finished Algorithm Checkin: 5/31/25 --> 2pm
+### Algorithm:
+algorithm.py: Contains the MobileNetV2 code along with the training algorithm on the training set.
+analysis_pipeline.py: 'please add in description here!'
 
-- Week 9 + 10: 
-  - Work on presentation + paper
+### Risk Detection: 
+'please add code used here!'
 
 ## File and Directory Structure
 ```
@@ -77,5 +63,6 @@ data/
         ├───Happy
         └───Sad
 ```
+
 
 

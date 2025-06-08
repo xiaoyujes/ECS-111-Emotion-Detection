@@ -29,16 +29,15 @@ Final Report:
 ### Preprocessing: 
 1. conversion_split.py: Converted all images to file type .jpg along with splits the dataset into training and testing sets. Creates csv files containing the relative paths to all images in the dataset along with the class they belong into defined by the name of the directory that the image belongs in.
 2. normalization.py: Normalized pixel values via images/255 along with standardizing the images to be 224 x 224.
-3. data encoding for emotions.py: Takes in the csv files created for the training and testing set and encodes the labels using both label encoding and one-hot emcoding methods./
+3. data encoding for emotions.py: Takes in the csv files created for the training and testing set and encodes the labels using both label encoding and one-hot emcoding methods.
 
-<<<<<<< HEAD
 ### Algorithm:
 algorithm.py: Contains the MobileNetV2 code along with the training algorithm on the training set.
 analysis_pipeline.py: 
 /'please add in description here!'
 
 ### Risk Detection: 
-/'please add code used here!'
+'please add code used here!'
 
 ## File and Directory Structure
 ```

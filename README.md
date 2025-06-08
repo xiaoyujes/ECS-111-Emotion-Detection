@@ -8,6 +8,9 @@ Project Description:
 Project Proposal: 
 [Proposal](https://docs.google.com/document/d/1mfopRWyw--y7h06VD_z1D53k16H_82CRohDGWVvjiAk/edit?usp=sharing)
 
+Project Presentation: 
+[Presentation](https://docs.google.com/presentation/d/1iKzccb15EB8VY1FnFnWSoCPZVB1LiDXuvovfqDzCQkk/edit?usp=sharing)
+
 Dataset: 
 [Kaggle](https://www.kaggle.com/datasets/vishmiperera/children-drawings?select=data)
 
@@ -28,9 +31,14 @@ Final Report:
 2. normalization.py: Normalized pixel values via images/255 along with standardizing the images to be 224 x 224.
 3. data encoding for emotions.py: Takes in the csv files created for the training and testing set and encodes the labels using both label encoding and one-hot emcoding methods./
 
+<<<<<<< HEAD
 ### Algorithm:
 algorithm.py: Contains the MobileNetV2 code along with the training algorithm on the training set.
 analysis_pipeline.py: 'please add in description here!'
+=======
+- ~~Interim Checkup: 5/28/25 --> 6/7pm~~
+- ~~Finished Algorithm Checkin: 6/1/25 --> 7pm~~
+>>>>>>> 321a60f7148d6515c10e2f7f3c90aecc0e955b54
 
 ### Risk Detection: 
 'please add code used here!'
@@ -63,6 +71,7 @@ data/
         ├───Happy
         └───Sad
 ```
+
 
 
 

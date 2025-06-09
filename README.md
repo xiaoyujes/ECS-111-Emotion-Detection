@@ -33,8 +33,7 @@ Final Report:
 
 ### Algorithm:
 algorithm.py: Contains the MobileNetV2 code along with the training algorithm on the training set.
-analysis_pipeline.py: 
-/'please add in description here!'
+analysis_pipeline.py: Evaluates the emotion classification model by reporting accuracy, F1 score, ROC AUC, and RMSE, and generates various visualizations such as the confusion matrix, ROC curves, and confidence distribution to support performance analysis.
 
 ### Risk Detection: 
 'please add code used here!'

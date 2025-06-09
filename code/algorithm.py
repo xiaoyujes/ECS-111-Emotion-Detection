@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import tensorflow as tf
 import numpy as np
 from tensorflow.keras import layers, models
-from tensorflow.keras.applications import MobileNetV2
+from tensorflow.keras.applications import ResNet50, EfficientNetB0, MobileNetV2
 from tensorflow.keras.applications.efficientnet import preprocess_input
 from tensorflow.keras.regularizers import l2
 from sklearn.model_selection import train_test_split
@@ -17,7 +17,7 @@ import os
 import seaborn as sns
 
 ####Hyperparameters###
-learningrate = 0.00001 
+learningrate = 0.00001
 batchsize = 32
 epochs = 100
 dropoutrate = 0.35
@@ -74,6 +74,20 @@ val_df = build_onehot_dataset(val_path, val_label, shuffle=False)
 Building the MobileNetV2 Model
 '''
 inputs =  tf.keras.Input(shape=(224, 224, 3)) #tensor output
+
+'''
+These lines of code were originally used during the training process, as we were testing ResNet50 and EfficientNetB0
+models, but after training, we ended up changing the base model to the MobileNetV2, indicated by the code block after
+the comment.
+base_model = ResNet50(include_top=False, #weights pretrained on imagenet dataset
+                         weights='imagenet', #omits fully connected classification layers
+                         input_shape=(224, 224, 3)) #defines shape and color of images
+                         
+base_model = EfficientNetB0(include_top=False, #weights pretrained on imagenet dataset
+                         weights='imagenet', #omits fully connected classification layers
+                         input_shape=(224, 224, 3)) #defines shape and color of images
+'''
+
 base_model = MobileNetV2(include_top=False, #weights pretrained on imagenet dataset
                          weights='imagenet', #omits fully connected classification layers
                          input_shape=(224, 224, 3)) #defines shape and color of images
@@ -104,20 +118,24 @@ outputs = layers.Dense(4, activation='softmax')(x) #probabilities across the 4 e
 
 model = models.Model(inputs=inputs, outputs=outputs)
 
+#adds in optimizer along with loss function to the model
 model.compile(
-    optimizer = tf.keras.optimizers.Adam(learning_rate=learningrate),
-    loss = 'categorical_crossentropy',
-    metrics = ['accuracy']
+    optimizer=tf.keras.optimizers.Adam(learning_rate=learningrate),
+    loss='categorical_crossentropy',
+    metrics=['accuracy']
 )
 
+#introduces callbacks to model
 callbacks = [tf.keras.callbacks.EarlyStopping(monitor='val_loss', patience=10, restore_best_weights=True),
              tf.keras.callbacks.ReduceLROnPlateau(monitor='val_loss', factor=0.5, patience=3)]
 
 labels_encoded = df['label_encoded'].values
 
+#attempts to balance weights of classes
 class_weights = compute_class_weight(class_weight='balanced', classes=np.unique(labels_encoded), y=labels_encoded)
 class_weights = dict(enumerate(class_weights))
 
+#fitting model on the training and validation set
 hist = model.fit(train_df, validation_data=val_df, epochs=epochs, class_weight=class_weights, callbacks=callbacks)
 
 ###Evaluation (F1-Score & Confusion Matrix)###

@@ -2,10 +2,10 @@
 
 This repository contains all the code that was used for the Emotion Detection in Children's Drawings final project for ECS 111, from preprocessing such as normalization, resizing, etc. to the final algorithm that was built for emotion detection, and the risk detection tasks. The main goal of this project is to build an algorithm that is capable of identifying the emotions present in a child's drawing, divided into four classes, anger, fear, happy, and sad, along with performing a risk detection analysis.
 
-## Dataset: 
+### Dataset: 
 [Kaggle](https://www.kaggle.com/datasets/vishmiperera/children-drawings?select=data)
 
-## Converted Data: 
+### Converted Data: 
 [Google Drive](https://drive.google.com/drive/folders/1xkOsVxCkwTQJi3ruOoOHVbvzSn8kqRCS?q=sharedwith:public%20parent:1xkOsVxCkwTQJi3ruOoOHVbvzSn8kqRCS) \
 Note: This Google Drive contains the converted images (preprocessed) along with the unconverted images and other files that were used throughout the duration of the project.
 

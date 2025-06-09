@@ -32,7 +32,7 @@ Final Report:
 3. data encoding for emotions.py: Takes in the csv files created for the training and testing set and encodes the labels using both label encoding and one-hot emcoding methods.
 
 ### Algorithm:
-algorithm.py: Contains the MobileNetV2 code along with the training algorithm on the training set.
+algorithm.py: Contains the MobileNetV2 code along with the training algorithm on the training set.<br>
 analysis_pipeline.py: Evaluates the emotion classification model by reporting accuracy, F1 score, ROC AUC, and RMSE, and generates various visualizations such as the confusion matrix, ROC curves, and confidence distribution to support performance analysis.
 
 ### Risk Detection: 

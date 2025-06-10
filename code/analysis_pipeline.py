@@ -39,7 +39,8 @@ from sklearn.model_selection import train_test_split
 # ─── CONFIG ─────────────────────────────────────────────────────────
 PROJECT_ROOT = r"C:\Users\ASUS\Desktop\ecs111\final project"
 MODEL_PATH   = os.path.join(PROJECT_ROOT, "test", "best_model.keras")
-CSV_PATH     = os.path.join(PROJECT_ROOT, "training_onehot.csv")
+TRAIN_CSV     = os.path.join(PROJECT_ROOT, "training_onehot.csv")
+TEST_CSV     = os.path.join(PROJECT_ROOT, "testing_onehot.csv")
 IMG_ROOT     = os.path.join(PROJECT_ROOT, "converted")
 OUTPUT_DIR   = os.path.join(PROJECT_ROOT, "test")
 os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -58,18 +59,22 @@ data_augmentation = tf.keras.Sequential([
 ], name='data_augmentation')
 
 # ─── LOAD & SPLIT CSV ─────────────────────────────────────────────
-df = pd.read_csv(CSV_PATH)
-df['fullpath'] = df['imagepath'].apply(
+train_df = pd.read_csv(TRAIN_CSV)
+test_df  = pd.read_csv(TEST_CSV)
+train_df['fullpath'] = train_df['imagepath'].apply(
     lambda p: os.path.normpath(os.path.join(IMG_ROOT, p))
 )
-df = df[df['fullpath'].map(os.path.exists)].reset_index(drop=True)
+test_df['fullpath']  = test_df['imagepath'].apply(lambda p: os.path.normpath(os.path.join(IMG_ROOT, p)))
+train_df = train_df[train_df['fullpath'].map(os.path.exists)].reset_index(drop=True)
+test_df  = test_df[test_df['fullpath'].map(os.path.exists)].reset_index(drop=True)
 
 train_df, valid_df = train_test_split(
-    df,
+    train_df,
     test_size=0.2,
-    stratify=df['label_encoded'],
+    stratify=train_df['label_encoded'],
     random_state=42
 )
+
 
 # ─── PREPARE VALIDATION GENERATOR ─────────────────────────────────
 valid_aug = ImageDataGenerator(rescale=1/255.0)
@@ -195,4 +200,53 @@ plt.tight_layout()
 plt.savefig(os.path.join(OUTPUT_DIR, "roc_curves.png"))
 plt.close()
 
+# ─── TEST SET EVALUATION ──────────────────────────────────────────
+test_gen = valid_aug.flow_from_dataframe(
+    test_df,
+    x_col="fullpath",
+    y_col=CLASS_NAMES,
+    target_size=IMG_SIZE,
+    class_mode="raw",
+    batch_size=BATCH_SIZE,
+    shuffle=False
+)
+steps_test = int(np.ceil(len(test_df) / BATCH_SIZE))
+probs_test = model.predict(test_gen, steps=steps_test, verbose=1)
+y_pred_test = np.argmax(probs_test, axis=1)
+y_true_test = np.argmax(test_df[CLASS_NAMES].values, axis=1)
+
+# ─ Confusion Matrix on Test Set ─
+cm_test = confusion_matrix(y_true_test, y_pred_test)
+plt.figure(figsize=(6, 6))
+sns.heatmap(cm_test, annot=True, fmt='d', cmap='Blues',
+            xticklabels=CLASS_NAMES,
+            yticklabels=CLASS_NAMES)
+plt.title("Test Set Confusion Matrix")
+plt.xlabel("Predicted")
+plt.ylabel("True")
+plt.tight_layout()
+plt.savefig(os.path.join(OUTPUT_DIR, "test_confusion_matrix.png"))
+plt.close()
+# ─ Multi-class ROC Curve on Test Set ─
+plt.figure(figsize=(8, 6))
+handles_test, labels_test = [], []
+for i, cls in enumerate(CLASS_NAMES):
+    disp = RocCurveDisplay.from_predictions(
+        test_df[cls].values,
+        probs_test[:, i],
+        name=cls,
+        ax=plt.gca()
+    )
+    handles_test.append(disp.line_)
+    auc = roc_auc_score(test_df[cls].values, probs_test[:, i])
+    labels_test.append(f"{cls} (AUC={auc:.2f})")
+
+plt.plot([0, 1], [0, 1], 'k--', linewidth=0.5)
+plt.title("Test Set ROC Curves")
+plt.xlabel("False Positive Rate")
+plt.ylabel("True Positive Rate")
+plt.legend(handles=handles_test, labels=labels_test, loc="lower right")
+plt.tight_layout()
+plt.savefig(os.path.join(OUTPUT_DIR, "test_roc_curves.png"))
+plt.close()
 print("All artifacts saved to:", OUTPUT_DIR)

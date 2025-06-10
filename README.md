@@ -24,7 +24,7 @@ Note: This Google Drive contains the converted images (preprocessed) along with 
 1. **preprocess_risk.py**: Assigns a simulated student ID to every group of 5 images, flags drawings with negative emotions, and aggregates per-student emotion features. It then labels each student as "at risk" if more than 60% of their drawings show negative emotions, producing a dataset ready for risk classification.    
 2. **risk_detection_alg.py**: Trains a Random Forest classifier to predict student risk status using the aggregated emotion features. The script outputs predictions, saves the trained model, and provides evaluation metrics and visualizations such as a confusion matrix.
 
-## Instructions & how to run code
+## Instructions to Run the Code
 Go to the [Kaggle site](https://www.kaggle.com/datasets/vishmiperera/children-drawings/data) and download the images, also available on the Google Drive [Google Drive](https://drive.google.com/drive/folders/1PujZ1zqCYv2RPzIiG6jLSAZhP6mbpL2a?zx=dsjt3vfp82wq) under the not_converted folder. For most .py files, the paths would have to be updated to be reflective of your desktop because when working on the project, some group member's relative paths weren't working as expected, hence the use of absolute paths in the files.
 ### Order of running the scripts
 1. Run conversion_split.py to obtain the converted file types along with the training and testing split (.csv files). Note: the converted files and .csv files can also be obained from the [Google Drive](https://drive.google.com/drive/folders/186FmT192KDe3QskJ-S7ILmuxSSRn_f6f?zx=dsjt3vfp82wq) under the converted folder. 

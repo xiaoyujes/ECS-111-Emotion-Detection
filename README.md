@@ -21,7 +21,8 @@ Note: This Google Drive contains the converted images (preprocessed) along with 
 2. **analysis_pipeline.py**: Evaluates the emotion classification model by reporting accuracy, F1 score, ROC AUC, and RMSE, and generates various visualizations such as the confusion matrix, ROC curves, and confidence distribution to support performance analysis.
 
 ### Risk Detection: 
-'please add code used here!'
+1. **preprocess_risk.py**: Assigns a simulated student ID to every group of 5 images, flags drawings with negative emotions, and aggregates per-student emotion features. It then labels each student as "at risk" if more than 60% of their drawings show negative emotions, producing a dataset ready for risk classification.    
+2. **risk_detection_alg.py**: Trains a Random Forest classifier to predict student risk status using the aggregated emotion features. The script outputs predictions, saves the trained model, and provides evaluation metrics and visualizations such as a confusion matrix.
 
 ## Instructions & how to run code
 Go to the [Kaggle site](https://www.kaggle.com/datasets/vishmiperera/children-drawings/data) and download the images, also available on the Google Drive [Google Drive](https://drive.google.com/drive/folders/1PujZ1zqCYv2RPzIiG6jLSAZhP6mbpL2a?zx=dsjt3vfp82wq) under the not_converted folder. For most .py files, the paths would have to be updated to be reflective of your desktop because when working on the project, some group member's relative paths weren't working as expected, hence the use of absolute paths in the files.
@@ -31,7 +32,8 @@ Go to the [Kaggle site](https://www.kaggle.com/datasets/vishmiperera/children-dr
 3. Run data encoding for emotions.py to obtain the one-hot encoded version of the training and testing sets. The csv files for this step can also be found on the Google Drive.
 4. Run algorithm.py to get the trained model along with the hyperparameters that were set to obtain the highest accuracy and F1-scores
 5. Run localized_model_algorithm.py to obtain model evaluation plots and other statistics
-6. 'insert instructions to run the risk detection code!'
+7. Run preprocess_risk.py to create the new csv file of the aggregrated data set. Adjust # of images as needed (80/20 split for our current project).
+8. Run risk_detection_alg.py using the new csv file from preprocess_risk.py. 
 
 ## File and Directory Structure
 ```
